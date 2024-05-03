@@ -209,18 +209,5 @@ class MyApp1 extends StatelessWidget {
   }
 }
 
-/*
-class Name extends StatelessWidget {
-  const Name({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      //backgroundColor: Colors.grey,
-      body: const Project3View(),
-    );
-  }
-}
-
-*/
 
