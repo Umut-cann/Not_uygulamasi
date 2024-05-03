@@ -1,5 +1,5 @@
 # Not_uygulamasi
- hive  ( noSql) ve bloc kullanılarak basit bir not tutma uygulamasi.
+ hive  ( noSql) ve bloc kullanılan bir not tutma uygulamasi.
  Ana sayfa da notların kaydedilmesi , silinmesi, güncellenmesi işlemleri mevcut.
 
  app bar ın sağında kategorilere göre filtreleme mevcut.
