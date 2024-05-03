@@ -1,18 +1,14 @@
 import 'package:app1/database.dart/hive_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
-//import 'package:state_managament/cubit/project3/project3_view/home.dart';
 
-// Veritabanındaki verileri al
 
-// task item -> task modeş
+
+
+
 abstract class ShoppingCubitState {}
 
-/*class ShoppingList extends ShoppingCubitState {
-  final List<TaskModel> items;
-  ShoppingList(this.items);
-}
-*/
+
 
 class FavoritesList extends ShoppingCubitState {
   final List<TaskModel> favoriteItems;
@@ -21,22 +17,16 @@ class FavoritesList extends ShoppingCubitState {
 
 class ShoppingCubit extends Cubit<List<TaskModel>> {
   final kzero = 0;
- late Box<TaskModel> todoBox; //=await Hive.openBox("a");
-  //Box<TaskModel> todoBox = await Hive.openBox<TaskModel>('todoBox');
+ late Box<TaskModel> todoBox; 
+
 
   ShoppingCubit() : super([]) {
-    //getTodosFromDatabase();
+   
     initialize();
   }
 
   Future<void> initialize() async {
     
-    //WidgetsFlutterBinding
-      //  .ensureInitialized(); // Flutter bağlamınızın başlatıldığından emin olun
-    //final appDocumentDirectory = await getApplicationDocumentsDirectory();
-    //Hive.init(appDocumentDirectory.path);
-    //Hive.registerAdapter(TaskModelAdapter());
-    //Hive.initFlutter(appDocumentDirectory.path);
 
      todoBox = await Hive.openBox<TaskModel>('todoBox');
     print(todoBox.length);
@@ -49,7 +39,7 @@ class ShoppingCubit extends Cubit<List<TaskModel>> {
     emit(todos);
   }
 
-  // Veritabanına veri ekleme
+
 
   void addTodoToDatabase(TaskModel todo) async {
     final todoBox = await Hive.openBox<TaskModel>('todoBox');
@@ -58,7 +48,7 @@ class ShoppingCubit extends Cubit<List<TaskModel>> {
     final todos = todoBox.values.toList();
 
     emit(todos);
-    //getTodosFromDatabase(); // Verileri güncelle
+  
   }
 
 
